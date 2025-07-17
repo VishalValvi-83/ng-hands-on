@@ -10,7 +10,13 @@ export class AppComponent {
   description = 'This is a sample Angular application.';
 
   students = ['Dipak', 'Dev', 'Vishal', 'Sagar', 'Sanjay'];
-  
+  student = [
+    { id: 1, name: 'Dipak', age: 26 },
+    { id: 2, name: 'Dev', age: 30 },
+    { id: 3, name: 'Vishal', age: 21 },
+    { id: 4, name: 'Sagar', age: 28 },
+    { id: 5, name: 'Sanjay', age: 24 }
+  ];
   username: string = "user"
   password: number = 123;
 
@@ -40,6 +46,13 @@ export class AppComponent {
     //task 4
     while (this.students.length > 0) {
       console.log("student: " + this.students.pop());
+    }
+    //task 5
+    console.log("Student who is older than 25:");
+    for (let i = 0; i < this.student.length; i++) {
+      if (this.student[i].age > 25) {
+        console.log(this.student[i]);
+      }
     }
   }
 
