@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-angular-app';
   description = 'This is a sample Angular application.';
-  // task
+
+  students = ['Dipak', 'Dev', 'Vishal', 'Sagar', 'Sanjay'];
+  
   username: string = "user"
   password: number = 123;
 
@@ -30,7 +32,11 @@ export class AppComponent {
     let paymentMethod = this.PaymentMethod("Credit Card");
     console.log(paymentMethod);
 
-
+    for (let i = 1; i <= 20; i++) {
+      if (i % 2 === 0) {
+        console.log(i);
+      }
+    }
   }
 
 }
