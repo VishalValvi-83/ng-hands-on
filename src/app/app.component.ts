@@ -54,6 +54,16 @@ export class AppComponent {
         console.log(this.student[i]);
       }
     }
+    //task 6
+    let tries: number = 3;
+    do {
+      console.log("Login successful " + tries + " tries left.");
+      tries--;
+      if (tries === 0) {
+        console.log("No more tries left.");
+      }
+
+    } while (tries > 0)
   }
 
 }
