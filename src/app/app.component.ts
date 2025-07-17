@@ -6,34 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  title = 'my-angular-app';
+  description = 'This is a sample Angular application.';
+  //task
+  username: string = "user"
+  password: number = 123;
   constructor() {
-    console.log("AppComponent initialized");
-    this.greet();
+    //task 1
+    if (this.username == "user" && this.password == 123) {
+      console.log("User is logged. Redirecting to Dashboard...");
+
+    } else {
+      console.log("Invalid credentials.");
+
+    }
+
   }
 
-  title = 'first-ng-app';
-  description = 'This is my first Angular application.';
-
-  //object
-  students = [
-    { id: 1, name: 'JS', age: 20 },
-    { id: 2, name: 'SB', age: 22 },
-    { id: 3, name: 'AK', age: 23 },
-
-  ]
-  //function
-  greet() {
-    console.log("hello world");
-  }
-
-  //function with parameters
-  greetUser(name: string) {
-    console.log(`Hello, vishal!`);
-  }
-  //function with return type
-  getFullName(): string {
-    return "hello world";
-  }
 }
 
