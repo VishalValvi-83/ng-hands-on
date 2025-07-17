@@ -37,6 +37,10 @@ export class AppComponent {
         console.log(i);
       }
     }
+    //task 4
+    while (this.students.length > 0) {
+      console.log("student: " + this.students.pop());
+    }
   }
 
 }
