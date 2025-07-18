@@ -49,9 +49,9 @@ export class AppComponent {
     }
     //task 5
     console.log("Student who is older than 25:");
-    for (let i = 0; i < this.student.length; i++) {
-      if (this.student[i].age > 25) {
-        console.log(this.student[i]);
+    for (let p of this.student) {
+      if (p.age > 25) {
+        console.log(p.name + " is older than 25 years.");
       }
     }
     //task 6
