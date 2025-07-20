@@ -1,0 +1,48 @@
+<h1>Data Binding in Angular</h1>
+
+<section>
+  <h2>String Interpolation</h2>
+  <ul>
+    <li>String interpolation binds data from the component to the template.</li>
+    <li>It uses double curly braces to display component properties.</li>
+    <li>Can display variables, method results, or simple expressions.</li>
+    <li ngNonBindable>
+      Use <code>{{}}</code> to bind data.
+    </li>
+    <li>
+      <details>
+        <summary>Example Code</summary>
+        <pre>
+<code>&lt;!-- app.component.html --&gt;
+&lt;h1&gt;{{"{{title}}"}}&lt;/h1&gt;  // Displays the title from the component
+&lt;p&gt;{{"{{2 + 2}}"}}&lt;/p&gt;  // Output: 4
+</code>
+        </pre>
+      </details>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Property Binding</h2>
+  <ul>
+    <li>Binds component properties to HTML element properties.</li>
+    <li>Uses <code>[property]</code> syntax to bind data.</li>
+    <li>Can set attributes, properties, and CSS styles.</li>
+    <li ngNonBindable>
+      Use <code>[property]="expression"</code> to bind properties.
+    </li>
+    <li>
+      <details>
+        <summary>Example Code</summary>
+        <pre>
+<code>&lt;!-- app.component.html --&gt;
+&lt;img [src]="logoURL"&gt;
+&lt;button [disabled]="isButtonDisabled"&gt;Click Me&lt;/button&gt;
+&lt;input [value]="inputValue"/&gt;
+</code>
+        </pre>
+      </details>
+    </li>
+  </ul>
+</section>
