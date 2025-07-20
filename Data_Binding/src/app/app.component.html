@@ -1,7 +1,6 @@
 <h1>Data Binding in Angular</h1>
-
 <section>
-  <h2>String Interpolation</h2>
+  <h2>1. String Interpolation</h2>
   <ul>
     <li>String interpolation binds data from the component to the template.</li>
     <li>It uses double curly braces to display component properties.</li>
@@ -13,10 +12,9 @@
       <details>
         <summary>Example Code</summary>
         <pre>
-<code>&lt;!-- app.component.html --&gt;
-&lt;h1&gt;{{"{{title}}"}}&lt;/h1&gt;  // Displays the title from the component
-&lt;p&gt;{{"{{2 + 2}}"}}&lt;/p&gt;  // Output: 4
-</code>
+          <code>app.component.html
+          &lt;h1>{{"{{title}}"}}&lt;/h1>  // Displays the title from the component
+          &lt;p>{{"{{2 + 2}}"}}&lt;/p>  // Output: 4</code>
         </pre>
       </details>
     </li>
@@ -24,7 +22,7 @@
 </section>
 
 <section>
-  <h2>Property Binding</h2>
+  <h2>2. Property Binding</h2>
   <ul>
     <li>Binds component properties to HTML element properties.</li>
     <li>Uses <code>[property]</code> syntax to bind data.</li>
@@ -36,11 +34,62 @@
       <details>
         <summary>Example Code</summary>
         <pre>
-<code>&lt;!-- app.component.html --&gt;
-&lt;img [src]="logoURL"&gt;
-&lt;button [disabled]="isButtonDisabled"&gt;Click Me&lt;/button&gt;
-&lt;input [value]="inputValue"/&gt;
-</code>
+          <code><!-- app.component.html -->
+          &lt;img [src]="logoURL">
+          &lt;button [disabled]="isButtonDisabled">Click Me&lt;/button>
+          &lt;input [value]="inputValue"/></code>
+        </pre>
+      </details>
+    </li>
+    <li>Example: <textarea style="width: 60%; padding: 5px;" disabled cols="2"
+        rows="1" [value]="description">
+      </textarea></li>
+  </ul>
+</section>
+<section>
+  <h2>3. Event Binding</h2>
+  <ul>
+    <li>Binds component (TS) methods to HTML events.</li>
+    <li>Uses <code>(event)</code> syntax to handle events.</li>
+    <li>Can respond to user actions like clicks, key presses, etc.</li>
+    <li ngNonBindable>
+      Use <code>(event)="methodName($event)"</code> to bind events.
+    </li>
+    <li>
+      <details>
+        <summary>Example Code</summary>
+        <pre>
+          <code>app.component.html
+            &lt;button (click)="onButtonClick()">Click Me&lt;/button &gt;
+          &lt;input (input)="onInputChange($event)" type="text" /&gt;</code>
+        </pre>
+      </details>
+    </li>
+    <li>Example: <button (click)="onButtonClick()">Click Me</button></li>
+    <li>Example: <select (input)="onInputChange($event)">
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+      </select>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>4. Two-Way Data Binding</h2>
+  <ul>
+    <li>Combines property and event binding for two-way data flow.</li>
+    <li>Uses <code>[(ngModel)]</code> syntax to bind data.</li>
+    <li>Requires importing FormsModule in the module.</li>
+    <li ngNonBindable>
+      Use <code>[(ngModel)]="property"</code> for two-way binding.
+    </li>
+    <li>
+      <details>
+        <summary>Example Code</summary>
+        <pre>
+          <code><!-- app.component.html -->
+          &lt;input [(ngModel)]="inputValue" />
+          &lt;p>Input Value: {{inputValue}}&lt;/p&gt;</code>
         </pre>
       </details>
     </li>
