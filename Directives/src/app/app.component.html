@@ -73,8 +73,7 @@
       </div>
     </li>
   </ul>
-  <li><strong>*ngFor</strong>: Used to iterate over a collection and render
-    a template for each item in the collection.
+  <li><strong>*ngFor</strong>: Repeats an element for each item in a List/Array
     <details>
       <summary>Example code of *ngFor</summary>
       <pre>
@@ -96,7 +95,7 @@
         <li *ngFor="let item of items">{{item}}</li>
       </ul>
       Output2:
-      <table>
+      <table border="1" *ngIf="students.length > 0">
         <tr>
           <th>Name</th>
           <th>Age</th>
@@ -106,7 +105,7 @@
           <td>{{std.age}}</td>
         </tr>
       </table>
+      <p *ngIf="students.length == 0">No Details found...</p>
     </div>
   </li>
-  
 </section>

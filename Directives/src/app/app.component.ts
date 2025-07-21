@@ -18,7 +18,7 @@ export class AppComponent {
 
   items = ['Item 1', 'Item 2', 'Item 3'];
 
-  students = [
+  students: { name: string, age: number }[] = [
     { name: 'Vishal', age: 20 },
     { name: 'DK', age: 22 },
     { name: 'RK', age: 21 }
