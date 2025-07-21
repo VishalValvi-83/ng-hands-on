@@ -84,8 +84,31 @@ button {
     transition: background 0.2s;
 }
 
-button:disabled,
-textarea:disabled {
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    border: 1px solid #90caf9;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 1em;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #90caf9;
+    border-radius: 12px;
+    padding: 16px;
+}
+form > p{
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+    color: #0d47a1;
+    text-align: center;
+}
+
+button:disabled {
     background: #b0bec5;
     color: #fff;
     cursor: not-allowed;

@@ -24,4 +24,14 @@ export class AppComponent {
     { name: 'RK', age: 21 }
   ];
 
+  selectedColor: string = 'red';
+  toggle() {
+    this.selectedColor = this.selectedColor === 'red' ? 'blue' : 'red';
+  }
+  num:number= 2;
+  formName: string = "Show Form";
+  toggleForm(){
+    this.num = this.num === 2 ? 1 : 2;
+    this.num === 1 ? this.formName = "SignUp Form" : this.formName = "Login Form";
+  }
 }

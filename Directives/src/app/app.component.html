@@ -90,11 +90,12 @@
           </pre>
     </details>
     <div>
-      Output1:
+      <strong>Output 1:</strong>
       <ul>
         <li *ngFor="let item of items">{{item}}</li>
       </ul>
-      Output2:
+      <strong>Output 2:</strong>
+
       <table border="1" *ngIf="students.length > 0">
         <tr>
           <th>Name</th>
@@ -106,6 +107,68 @@
         </tr>
       </table>
       <p *ngIf="students.length == 0">No Details found...</p>
+    </div>
+  </li>
+  <li><strong>*ngSwitch</strong>: Used to conditionally include one of a set of
+    templates based on the value of an expression.
+    <details>
+      <summary>Example code of *ngSwitch</summary>
+      <pre>
+            &lt;!-- app.component.ts --&gt;
+            <code>selectedColor = 'red';</code>
+
+            &lt;!-- app.component.html --&gt;
+
+            &lt;h1&gt;Angular Directives Example&lt;/h1&gt;
+            &lt;div [ngSwitch]="selectedColor"&gt;
+              &lt;div *ngSwitchCase="'red'"&gt;Red Color&lt;/div&gt;
+              &lt;div *ngSwitchCase="'green'"&gt;Green Color&lt;/div&gt;
+              &lt;div *ngSwitchCase="'blue'"&gt;Blue Color&lt;/div&gt;
+              &lt;div *ngSwitchDefault&gt;No Color Selected&lt;/div&gt;
+            &lt;/div&gt;
+          </pre>
+    </details>
+    <div>
+      <strong>Output:</strong>
+      <!-- <button (click)="toggle()">Change Color</button> -->
+      <div [ngSwitch]="selectedColor">
+        <div *ngSwitchCase="'red'">Red Color</div>
+        <div *ngSwitchCase="'green'">Green Color</div>
+        <div *ngSwitchCase="'blue'">Blue Color</div>
+        <div *ngSwitchDefault>No Color Selected</div>
+      </div>
+    </div>
+    <div>
+      <strong>Example 2:</strong>
+      <div [ngSwitch]="num">
+        <button style="margin: 10px auto; display: block;"
+          (click)="toggleForm()">Go to {{formName}}</button>
+        <div *ngSwitchCase="1">
+          <form>
+            <p>Sign in</p>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div *ngSwitchCase="2">
+          <form>
+            <p>Sign-Up</p>
+            <label for="new-username">New Username:</label>
+            <input type="text" id="new-username" name="new-username" required>
+            <br>
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password"
+              required>
+            <br>
+            <button type="submit">Register</button>
+          </form>
+        </div>
+      </div>
     </div>
   </li>
 </section>
