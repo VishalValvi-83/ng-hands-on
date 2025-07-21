@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Directives';
+
+  isVisible: boolean = true;
+  Toggler = "Hide";
+
+  toggleVisibility() {
+    this.isVisible = !this.isVisible;
+    this.Toggler = this.isVisible ? "Hide" : "Show";
+  }
 }
