@@ -84,6 +84,13 @@ button {
     transition: background 0.2s;
 }
 
+button:disabled,
+textarea:disabled {
+    background: #b0bec5;
+    color: #fff;
+    cursor: not-allowed;
+}
+
 select {
     border: 1px solid #90caf9;
     border-radius: 4px;

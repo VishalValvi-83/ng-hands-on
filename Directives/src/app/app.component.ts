@@ -23,4 +23,5 @@ export class AppComponent {
     { name: 'DK', age: 22 },
     { name: 'RK', age: 21 }
   ];
+
 }
