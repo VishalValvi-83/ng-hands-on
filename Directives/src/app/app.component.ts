@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Directives';
+
+  isVisible: boolean = true;
+  Toggler = "Hide";
+
+  toggleVisibility() {
+    this.isVisible = !this.isVisible;
+    this.Toggler = this.isVisible ? "Hide" : "Show";
+  }
+
+  items = ['Item 1', 'Item 2', 'Item 3'];
+
+  students = [
+    { name: 'Vishal', age: 20 },
+    { name: 'DK', age: 22 },
+    { name: 'RK', age: 21 }
+  ];
 }
