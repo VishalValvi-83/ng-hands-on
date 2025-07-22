@@ -29,10 +29,16 @@
 
             &lt;!-- app.component.html --&gt;
 
-            &lt;h1&gt;Angular Directives Example&lt;/h1&gt;
-            &lt;select &gt;Toggle Style&lt;/select&gt;
+            &lt;select name="textColor" [(ngModel)]="textColor"&gt;
+            &lt;option value&gt;Select Color&lt;/option&gt;
+            &lt;option value&gt;Black Color&lt;/option&gt;
+            &lt;option value&gt;Red Color&lt;/option&gt;
+            &lt;option value&gt;Blue Color&lt;/option&gt;
+            &lt;option value&gt;Green Color&lt;/option&gt;
+            &lt;/select&gt;
+
             &lt;div [ngStyle]="'color': textColor"&gt;
-              This text changes color based on isActive.
+              This text changes color based on the selected option.
             &lt;/div&gt;
           </pre>
       </details>
@@ -41,7 +47,7 @@
           Output:
         </strong>
         <select name="textColor" [(ngModel)]="textColor">
-          <option value="">Select Color</option>
+          <option value>Select Color</option>
           <option value="black">Black</option>
           <option value="red">Red</option>
           <option value="blue">Blue</option>
