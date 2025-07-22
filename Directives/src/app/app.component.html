@@ -1,13 +1,6 @@
 <h1>Angular Directives</h1>
 
 <section>
-  <p>Welcome to the Angular Directives tutorial!</p>
-  <p>In this tutorial, you will learn about the different types of directives in
-    Angular, how to create custom directives, and how to use built-in directives
-    effectively.</p>
-  <p>Let's get started!</p>
-</section>
-<section>
   <h2>What are Directives?</h2>
   <p>Directives are classes that add additional behavior to elements in your
     Angular applications. They can change the appearance or behavior of a DOM
@@ -21,6 +14,48 @@
       of an existing element.</li>
   </ul>
 </section>
+
+<section>
+  <h2> Attribute Directives</h2>
+  <ul>
+    <li>
+      <strong>*ngStyle</strong>: Used to set inline styles on an element based
+      on an expression.
+      <details>
+        <summary>Example code of *ngStyle</summary>
+        <pre>
+            &lt;!-- app.component.ts --&gt;
+            <code>textColor = 'black';</code>
+
+            &lt;!-- app.component.html --&gt;
+
+            &lt;h1&gt;Angular Directives Example&lt;/h1&gt;
+            &lt;select &gt;Toggle Style&lt;/select&gt;
+            &lt;div [ngStyle]="'color': textColor"&gt;
+              This text changes color based on isActive.
+            &lt;/div&gt;
+          </pre>
+      </details>
+      <div>
+        <strong>
+          Output:
+        </strong>
+        <select name="textColor" [(ngModel)]="textColor">
+          <option value="">Select Color</option>
+          <option value="black">Black</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+        <div [ngStyle]="{'color': textColor}">
+          This text changes color based on the selected option.
+        </div>
+
+      </div>
+    </li>
+  </ul>
+</section>
+
 <section>
   <h2>Built-in Directives</h2>
   <p>Angular provides several built-in directives that you can use in your

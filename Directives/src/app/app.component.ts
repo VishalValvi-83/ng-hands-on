@@ -34,4 +34,7 @@ export class AppComponent {
     this.num = this.num === 2 ? 1 : 2;
     this.num === 1 ? this.formName = "SignUp Form" : this.formName = "Login Form";
   }
+
+  //Attribute Directive
+textColor: string = '';
 }
