@@ -1,0 +1,68 @@
+<h1>{{title}}</h1>
+
+<section class="container">
+  <div class="task-form">
+    <form (ngSubmit)="addTask()">
+      <div class="fields">
+        <label>Employee Name:
+          <input type="text" [(ngModel)]="task.empName" name="employeeName"
+            required />
+        </label>
+      </div>
+
+      <div class="fields">
+        <label>Task Title:
+          <input type="text" [(ngModel)]="task.title" name="title" required />
+        </label>
+      </div>
+
+      <div class="small-fields">
+        <div class="fields">
+          <label>Priority:
+            <select name="priority" [(ngModel)]="task.priority" required>
+              <option value disabled selected>Select priority</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="fields">
+          <label>Due Date:
+            <input type="date" [(ngModel)]="task.dueDate" name="dueDate"
+              required />
+          </label>
+        </div>
+      </div>
+      <button type="submit">Save task</button>
+    </form>
+  </div>
+  <div class="task-table">
+    <h2 *ngIf="tasks.length > 0">Task List</h2>
+    <h2 class="no-tasks" *ngIf="tasks.length === 0">No tasks assigned yet!!
+    </h2>
+    <table *ngIf="tasks.length > 0 noTasks">
+      <thead>
+        <tr>
+          <th>Employee Name</th>
+          <th>Task Title</th>
+          <th>Priority</th>
+          <th>Due Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.empName }}</td>
+          <td [ngStyle]="{ 'font-size': getFontSize(task.priority) }">
+            {{task.title}}
+          </td>
+          <td [ngClass]="getPriorityClass(task.priority)">
+            {{ task.priority}}
+          </td>
+          <td>{{ task.dueDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
