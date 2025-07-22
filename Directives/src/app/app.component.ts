@@ -28,13 +28,24 @@ export class AppComponent {
   toggle() {
     this.selectedColor = this.selectedColor === 'red' ? 'blue' : 'red';
   }
-  num:number= 2;
+  num: number = 2;
   formName: string = "Show Form";
-  toggleForm(){
+  toggleForm() {
     this.num = this.num === 2 ? 1 : 2;
     this.num === 1 ? this.formName = "SignUp Form" : this.formName = "Login Form";
   }
-
+  isActive: boolean = false;
   //Attribute Directive
-textColor: string = '';
+  textColor: string = '';
+  Notify: boolean = false;
+
+  getNotify() {
+    if (this.isActive) {
+      return "active";
+    } else {
+      return "inactive";
+
+    }
+
+  }
 }

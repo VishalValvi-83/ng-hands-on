@@ -19,7 +19,7 @@
   <h2> Attribute Directives</h2>
   <ul>
     <li>
-      <strong>*ngStyle</strong>: Used to set inline styles on an element based
+      <strong>[ngStyle]</strong>: Used to set inline styles on an element based
       on an expression.
       <details>
         <summary>Example code of *ngStyle</summary>
@@ -57,6 +57,31 @@
           This text changes color based on the selected option.
         </div>
 
+      </div>
+    </li>
+    <li>
+      <strong>ngClass</strong>
+      Used to add or remove CSS classes based on an expression.
+      <details>
+        <summary>Example code of ngClass</summary>
+        <pre>
+            &lt;!-- app.component.ts --&gt;
+            <code>isActive = true;</code>
+
+            &lt;!-- app.component.html --&gt;
+
+            &lt;button (click)="isActive = !isActive"&gt;Toggle Class&lt;/button&gt;
+            &lt;div [ngClass]="'active': isActive, 'inactive': !isActive"&gt;
+              This div's class changes based on isActive.
+            &lt;/div&gt;
+        </pre>
+      </details>
+      <div>
+        <strong>Output:</strong>
+        <button (click)="isActive = !isActive">Toggle Class</button>
+        <div [ngClass]="getNotify()">
+          This div's class changes based on isActive.
+        </div>
       </div>
     </li>
   </ul>

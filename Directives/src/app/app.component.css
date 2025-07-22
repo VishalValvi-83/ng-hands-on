@@ -94,6 +94,7 @@ input[type="password"] {
     width: calc(100% - 22px);
     box-sizing: border-box;
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -101,7 +102,8 @@ form {
     border-radius: 12px;
     padding: 16px;
 }
-form > p{
+
+form>p {
     margin: 0 0 10px;
     font-size: 1.05rem;
     color: #0d47a1;
@@ -138,6 +140,14 @@ td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #e0e0e0;
+}
+
+.active {
+    color: #2e7d32;
+}
+
+.inactive {
+    color: #c62828;
 }
 
 @media (max-width: 600px) {
