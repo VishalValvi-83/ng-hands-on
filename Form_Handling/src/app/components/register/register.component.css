@@ -10,5 +10,9 @@
     justify-content: center;
 }
 .form-container{
-    background-color: #9ee2d1;
+    background-color: #c2fcee;
+}
+.error{
+    font-size: small;
+    color: red;
 }

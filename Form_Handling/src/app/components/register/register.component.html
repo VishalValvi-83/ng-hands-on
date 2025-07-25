@@ -1,73 +1,99 @@
 <div
-    class="register-container vh-100 d-flex justify-content-center align-items-center bg-light">
-    <div class="card shadow p-4 form-container"
-        style="width: 100%; max-width: 500px;">
-        <h3 class="text-center mb-4">📝 Register</h3>
-        <form #registerForm="ngForm" (ngSubmit)="onRegister()"
-            autocomplete="off">
+    class="d-flex register-container justify-content-center align-items-center bg-light"
+    style="height: 100vh;">
+    <div class="card p-4" style="max-width: 500px; width: 100%;">
+        <h3 class="text-center">📝 Register</h3>
 
-            <div class="mb-3">
-                <label for="fullName" class="form-label">Full Name *</label>
+        <form [formGroup]="user" (ngSubmit)="onRegister()" autocomplete="off">
+
+            <div class="mb-2">
+                <label for="fullName">Full Name *</label>
                 <input type="text" id="fullName" class="form-control"
-                    name="fullName" placeholder="Your full name">
+                    formControlName="fullName" placeholder="Your full name">
+                <span class="text-danger error"
+                    *ngIf="user.get('fullName')?.touched && user.get('fullName')?.invalid">
+                    Full name is required / Must contain at least 3 characters.
+                </span>
             </div>
-
-            <div class="mb-3">
-                <label for="email" class="form-label">Email Address *</label>
-                <input type="email" id="email" class="form-control" name="email"
-                    ngModel required placeholder="Enter email">
+            <div class="mb-2">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" class="form-control"
+                    formControlName="email" placeholder="Enter email">
+                <span class="text-danger error"
+                    *ngIf="user.get('email')?.touched && user.get('email')?.invalid">
+                    Valid email is required.
+                </span>
             </div>
-
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone Number *</label>
-                <input type="tel" id="phone" class="form-control" name="phone"
-                    ngModel required placeholder="Enter phone number">
+            <div class="mb-2">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" class="form-control"
+                    formControlName="phone" placeholder="Enter phone number">
+                <span class="text-danger error"
+                    *ngIf="user.get('phone')?.touched && user.get('phone')?.invalid">
+                    Phone number is required.
+                </span>
             </div>
-
-            <div class="mb-3 d-flex gap-3 justify-content-around">
-                <div >
-
-                    <label for="gender" class="form-label">Gender *</label>
-                    <select id="gender" class="form-select" name="gender"
-                        ngModel
-                        required>
-                        <option value disabled selected>Select gender</option>
+            <div class="d-flex gap-3">
+                <div>
+                    <label for="gender">Gender *</label>
+                    <select id="gender" class="form-select"
+                        formControlName="gender">
+                        <option value disabled>Select gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
                         <option value="Prefer not to say">Prefer not to
                             say</option>
                     </select>
+                    <span class="text-danger error"
+                        *ngIf="user.get('gender')?.touched && user.get('gender')?.invalid">
+                        Gender is required.
+                    </span>
                 </div>
                 <div>
-                    <label for="dob" class="form-label">Date of Birth *</label>
-                    <input type="date" id="dob" class="form-control" name="dob"
-                        ngModel required>
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" class="form-control"
+                        formControlName="dob">
+                    <span class="text-danger error"
+                        *ngIf="user.get('dob')?.touched && user.get('dob')?.invalid">
+                        Date of Birth is required.
+                    </span>
                 </div>
             </div>
-
-            <div class="mb-3">
-                <label for="password" class="form-label">Password *</label>
+            <div class="mb-2">
+                <label for="password">Password *</label>
                 <input type="password" id="password" class="form-control"
-                    name="password" ngModel required
-                    placeholder="Create password">
+                    formControlName="password" placeholder="Create password">
+                <span class="text-danger error"
+                    *ngIf="user.get('password')?.touched && user.get('password')?.invalid">
+                    Password is required.
+                </span>
             </div>
-
-            <div class="mb-3">
-                <label for="confirmPassword" class="form-label">Confirm
-                    Password *</label>
+            <div class="mb-2">
+                <label for="confirmPassword">Confirm Password *</label>
                 <input type="password" id="confirmPassword" class="form-control"
-                    name="confirmPassword" ngModel required
+                    formControlName="confirmPassword"
                     placeholder="Re-enter password">
+                <span class="text-danger error"
+                    *ngIf="user.get('confirmPassword')?.touched && user.get('confirmPassword')?.invalid">
+                    Confirm Password is required.
+                </span>
+                <span class="error"
+                    *ngIf="user.get('confirmPassword')?.touched && user.get('password')?.value != user.get('confirmPassword')?.value">
+                    Password does not matched!!
+                </span>
+                <span class="text-success"
+                    *ngIf="user.get('confirmPassword')?.touched && user.get('password')?.value == user.get('confirmPassword')?.value && user.get('password')?.valid ">
+                    <small>Password matched</small>
+                </span>
             </div>
-
-            <button type="submit"
-                class="btn btn-success w-100 mt-2">Register</button>
+            <button type="submit" class="btn btn-success w-100"
+                [disabled]="user.invalid">Register</button>
         </form>
-
-        <div class="text-center mt-3">
-            <small>Already have an account? <a routerLink="/login">Login
-                    here</a></small>
+        <div class="text-center mt-2">
+            <small>Already have an account?
+                <a routerLink="/login">Login here</a>
+            </small>
         </div>
     </div>
 </div>
