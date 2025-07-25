@@ -1,6 +1,4 @@
-<div
-    class="d-flex register-container justify-content-center align-items-center bg-light"
-    style="height: 100vh;">
+<div class="register-container">
     <div class="card p-4" style="max-width: 500px; width: 100%;">
         <h3 class="text-center">📝 Register</h3>
 
@@ -17,7 +15,7 @@
             </div>
             <div class="mb-2">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" class="form-control"
+                <input type="email" class="form-control"
                     formControlName="email" placeholder="Enter email">
                 <span class="text-danger error"
                     *ngIf="user.get('email')?.touched && user.get('email')?.invalid">
@@ -26,7 +24,7 @@
             </div>
             <div class="mb-2">
                 <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" class="form-control"
+                <input type="tel" class="form-control"
                     formControlName="phone" placeholder="Enter phone number">
                 <span class="text-danger error"
                     *ngIf="user.get('phone')?.touched && user.get('phone')?.invalid">
@@ -36,7 +34,7 @@
             <div class="d-flex gap-3">
                 <div>
                     <label for="gender">Gender *</label>
-                    <select id="gender" class="form-select"
+                    <select class="form-select"
                         formControlName="gender">
                         <option value disabled>Select gender</option>
                         <option value="Male">Male</option>
@@ -52,7 +50,7 @@
                 </div>
                 <div>
                     <label for="dob">Date of Birth *</label>
-                    <input type="date" id="dob" class="form-control"
+                    <input type="date" class="form-control"
                         formControlName="dob">
                     <span class="text-danger error"
                         *ngIf="user.get('dob')?.touched && user.get('dob')?.invalid">
@@ -62,16 +60,17 @@
             </div>
             <div class="mb-2">
                 <label for="password">Password *</label>
-                <input type="password" id="password" class="form-control"
+                <input type="password" class="form-control"
                     formControlName="password" placeholder="Create password">
                 <span class="text-danger error"
                     *ngIf="user.get('password')?.touched && user.get('password')?.invalid">
-                    Password is required.
+                    Password must be at least 8 characters long and include
+                    uppercase, lowercase, number, and special character.
                 </span>
             </div>
             <div class="mb-2">
                 <label for="confirmPassword">Confirm Password *</label>
-                <input type="password" id="confirmPassword" class="form-control"
+                <input type="password" class="form-control"
                     formControlName="confirmPassword"
                     placeholder="Re-enter password">
                 <span class="text-danger error"

@@ -21,6 +21,7 @@ export class RegisterComponent {
   onRegister() {
     if (this.user.valid) {
       console.log('Registration Data:', this.user.value);
+      alert("User Registration Successful!")
     }
   }
 }
