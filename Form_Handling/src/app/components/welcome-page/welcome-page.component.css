@@ -1,0 +1,15 @@
+.home-container {
+    background-image: url('https://media.istockphoto.com/id/1418628408/vector/abstract-blurred-gradient-background-colours-with-dynamic-effect.jpg?s=612x612&w=0&k=20&c=v7ja1vfncSbHdNsgyjbtaiOPiexqUOLhRW_4L3PQ1ww=');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.button-card{
+    width: 400px;
+    background-color: #ffffb3;
+}
