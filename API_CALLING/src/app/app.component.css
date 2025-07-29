@@ -1,0 +1,53 @@
+h1{
+    text-align: center;
+    color: #ccc;
+}
+.response {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #515151;
+}
+
+.response pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.response button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #19df4e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.response h2 {
+    margin-bottom: 10px;
+}
+
+table {
+    width: max-content;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #3d3d3d;
+}
